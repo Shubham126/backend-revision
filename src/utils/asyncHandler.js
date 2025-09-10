@@ -1,16 +1,16 @@
 //asyncHandler in promise block 
 
 const asyncHandler = (requestHandler) => {
-    (req, res, next) => {
-        Promise.resolve(requesthandler(req, res, next)).catch((err) => next(err))
+    return (req, res, next) => {
+        Promise.resolve(requestHandler(req, res, next)).catch((err) => next(err))
     }
 }
 
-export default asyncHandler;
+export {asyncHandler};
 
 // Higher order function example
 
-// const asynchandler = () => {}                               // we all know this type of function
+// const asyncHandler = () => {}                               // we all know this type of function
 // const asyncHandler = (func) => () => {}                     // this is a higher order function
 // const asyncHandler = (func) => {async() => {}}
 // const asyncHandler = (func) => async() => {}
