@@ -32,18 +32,10 @@ const registerUser = asyncHandler(async (req, res) => {
     // return res
 
    const {  fullname, email, username, password } = req.body
-  //  console.log("email:", email);
+   console.log("email:", email);
 
 
-//    if(fullname == ""){
-//     throw new apiError(400, " fullname is required")
-//    } 
-
-
-// we can check everythig one by one using the if blocks but in Javascript 
-// we have a .some() method to make this easier
-
-      if([fullname, email, username, password].some((field) => field?.trim() === "")){
+   if([fullname, email, username, password].some((field) => field?.trim() === "")){
         throw new ApiError(400, "All fields are required")
       }
 
